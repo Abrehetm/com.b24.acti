@@ -11,7 +11,7 @@ public class TaskPageTests extends BaseTest{
 		lp.enterPassword("manager");
 		lp.clickLoginButton();
 		String actual = ep.getUserLoggedIn();
-		Assert.assertTrue(actual.contains("John Doe"));
+		Assert.assertTrue(actual.contains("John"));
 		ep.clickTaskMenu();
 		tp.clickAddNewButton();
 		tp.clicknewCustomerOption();
@@ -29,7 +29,7 @@ public class TaskPageTests extends BaseTest{
 		lp.enterPassword("manager");
 		lp.clickLoginButton();
 		String actual = ep.getUserLoggedIn();
-		Assert.assertTrue(actual.contains("John"));
+		Assert.assertTrue(actual.contains("John Doe"));
 		ep.clickTaskMenu();
 		tp.searchCreatedCustomer("TestCustomer");
 		tp.clickSearchedCustomer();
