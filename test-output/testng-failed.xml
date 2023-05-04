@@ -5,8 +5,9 @@
     <classes>
       <class name="com.acti.testcase.LoginPageTests">
         <methods>
-          <include name="testLoginFunction"/>
-          <include name="testLoginInvaliCredientials"/>
+          <include name="testLoginPageTitle"/>
+          <include name="preTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.acti.testcase.LoginPageTests -->
     </classes>

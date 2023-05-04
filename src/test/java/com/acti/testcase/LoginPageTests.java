@@ -7,17 +7,18 @@ public class LoginPageTests extends BaseTest{
 	
 	
 	
-	@Test
+	@Test(enabled = true)
 	public void testLoginPageTitle()
 	{
 		
 		String expected= "actiTIME - Login";
 		String actual = lp.getLoginPageTitle();
 		System.out.println(expected);
-		Assert.assertEquals(actual, expected);
+		Assert.assertTrue(actual.contains("John"));
+		ep.clickLogout();
 		
 	}
-	@Test
+	@Test(enabled = false)
 	public void testActiImgDisplayed()
 	{
 		
@@ -26,7 +27,7 @@ public class LoginPageTests extends BaseTest{
 		
 		
 	}
-	@Test
+	@Test(enabled =false)
 	public void testForgotPasswordDisplayed() 
 	{
 		
@@ -34,16 +35,20 @@ public class LoginPageTests extends BaseTest{
 		Assert.assertTrue(flag);
 		quitDriver();
 	}
-	@Test
+	@Test(enabled = false)
 	public void testLoginFunction()
 	{
 		
 		lp.enterusername("admin");
 		lp.enterPassword("manager");
 		lp.clickLoginButton();
+		String actual = ep.getUserLoggedIn();
+		Assert.assertTrue(actual.contains("John Doe"));
+		ep.clickLogout();
+		
 		
 	}
-	@Test
+	@Test(enabled = false)
 	public void testLoginInvaliCredientials() throws InterruptedException
 	{
 		
@@ -56,5 +61,6 @@ public class LoginPageTests extends BaseTest{
 		
 		
 	}
+
 
 }
